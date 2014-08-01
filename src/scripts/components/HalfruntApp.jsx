@@ -10,45 +10,23 @@ var React = require('react');
 require('../../styles/reset.css');
 require('../../styles/main.css');
 
+//var rest = require('rest/client/xhr.js');
+
 var StoryBoard = require('./StoryBoard.jsx');
 
 var HalfruntApp = React.createClass({
   getInitialState: function() {
-    return {stories: [{jiraId: 'KCA-1101AA',
-                       title: 'Pay by credit card',
-                       bugs: [{p1: 0, p2: 1, p3: 5}],
-                       sonar: {blocker: 0, critial: 0, major: 5, minor: 5, info: 10},
-                       code: {linesAdded: 100, linesRemoved: 20}},
-                      {jiraId: 'KCA-1104',
-                       title: 'Pay by credit card',
-                       bugs: [{p1: 0, p2: 1, p3: 5}],
-                       sonar: {blocker: 0, critial: 0, major: 5, minor: 5, info: 10},
-                       code: {linesAdded: 100, linesRemoved: 20}},
-                      {jiraId: 'KCA-110422112211',
-                       title: 'Pay by credit card',
-                       bugs: [{p1: 0, p2: 1, p3: 5}],
-                       sonar: {blocker: 0, critial: 0, major: 5, minor: 5, info: 10},
-                       code: {linesAdded: 100, linesRemoved: 20}},
-                      {jiraId: 'KCA-11022',
-                       title: 'Pay by credit card',
-                       bugs: [{p1: 0, p2: 1, p3: 5}],
-                       sonar: {blocker: 0, critial: 0, major: 5, minor: 5, info: 10},
-                       code: {linesAdded: 100, linesRemoved: 20}},
-                      {jiraId: 'KCA-1105',
-                       title: 'Pay by credit card',
-                       bugs: [{p1: 0, p2: 1, p3: 5}],
-                       sonar: {blocker: 0, critial: 0, major: 5, minor: 5, info: 10},
-                       code: {linesAdded: 100, linesRemoved: 20}},]};
+    return {stories: [{jiraId: 'asdas'}]};
   },
 
-//   componentDidMount: function() {
-//     $.get('/data/stories.json', function(stories) {
-//       if (this.isMounted()) {
-//         alert(stories);
-//         this.setState(stories);
+  componentDidMount: function() {
+//     var that = this;
+//     rest('/data/stories.json').then(function(response) {
+//       if (that.isMounted()) {
+//         that.setState({stories: JSON.parse(response.entity)});
 //       }
-//     }.bind(this));
-//   },
+//     });
+  },
 
   render: function() {
     return (
