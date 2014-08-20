@@ -1,7 +1,7 @@
 /* Stiziles */
 
 html, body {
-  background: #222222;
+  /*background: #222222;*/
 }
 
 /* main */
@@ -11,4 +11,24 @@ html, body {
   height: 100%;
   background: #222222;
   color: #fff;
+}
+
+.story-board {
+}
+
+.story {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+  border: solid #6AC5AC 2px;
+}
+
+.story-id p {
+  text-align: center;
+}
+
+.story.story-title {
+  text-align: center;
 }

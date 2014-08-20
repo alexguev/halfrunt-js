@@ -10,22 +10,22 @@ var React = require('react');
 require('../../styles/reset.css');
 require('../../styles/main.css');
 
-//var rest = require('rest/client/xhr.js');
+var qajax = require('qajax');
 
 var StoryBoard = require('./StoryBoard.jsx');
 
 var HalfruntApp = React.createClass({
   getInitialState: function() {
-    return {stories: [{jiraId: 'asdas'}]};
+    return {stories: []};
   },
 
   componentDidMount: function() {
-//     var that = this;
-//     rest('/data/stories.json').then(function(response) {
-//       if (that.isMounted()) {
-//         that.setState({stories: JSON.parse(response.entity)});
-//       }
-//     });
+    var that = this;
+    qajax('/data/stories.json').then(qajax.toJSON).then(function(response) {
+      if (that.isMounted()) {
+        that.setState({stories: response});
+      }
+    });
   },
 
   render: function() {

@@ -12,9 +12,12 @@ var Story = React.createClass({
 
   render: function() {
     return (
-      <div>
-        {this.props.jiraId}ZZZ
-
+      <div className="story">
+        <div className="story-id"><p>{this.props.jiraId}</p></div>
+        <div className="story-title">{this.props.title}</div>
+        <div className="story-body">
+          OHHHHH11222
+        </div>
       </div>
     );
   }
