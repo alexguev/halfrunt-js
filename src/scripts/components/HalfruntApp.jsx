@@ -21,11 +21,25 @@ var HalfruntApp = React.createClass({
 
   componentDidMount: function() {
     var that = this;
+
     qajax('/data/stories.json').then(qajax.toJSON).then(function(response) {
       if (that.isMounted()) {
         that.setState({stories: response});
       }
     });
+
+    this.intervalId = setInterval(function(){
+      qajax('/data/stories.json').then(qajax.toJSON).then(function(response) {
+        if (that.isMounted()) {
+          that.setState({stories: response});
+        }
+      });
+    }, 5000);
+
+  },
+
+  componentWillUnmount: function () {
+    clearInterval(this.intervalId);
   },
 
   render: function() {
