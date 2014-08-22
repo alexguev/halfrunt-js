@@ -1,0 +1,6 @@
+- complete story data display
+- integrate less
+- serve data from clojure project
+- use socket.io to push changes to browser :)
+  - or just pull new data every 5 seconds (for now, this won't scale)
+- FTW ... prepare react slides :)
