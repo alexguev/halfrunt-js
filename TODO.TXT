@@ -1,6 +1,12 @@
-- complete story data display
+-X complete story data display
 - integrate less
 - serve data from clojure project
 - use socket.io to push changes to browser :)
-  - or just pull new data every 5 seconds (for now, this won't scale)
+  -X or just pull new data every 5 seconds (for now, this won't scale)
 - FTW ... prepare react slides :)
+
+- look at stories.json to figure out which db tables are needed
+  - story (story_id, jira_id, title, size)
+  - bugs (story_id, severity, open_count, total_count)
+  - sonar (story_id, severity, open_count, total_count)
+  - code (story_id, lines_added, lines_deleted)
