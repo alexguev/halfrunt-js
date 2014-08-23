@@ -7,6 +7,7 @@
   "mainInput": "HalfruntApp",
   "mainOutput": "main",
   "dependencies": {
+    "bootstrap": "^3.2.0",
     "qajax": "^0.2.4",
     "react": "^0.11.1",
     "rest": "^1.1.1",

@@ -1,5 +1,7 @@
 -X complete story data display
 - integrate less
+- filtering
+
 - serve data from clojure project
 - use socket.io to push changes to browser :)
   -X or just pull new data every 5 seconds (for now, this won't scale)
@@ -10,3 +12,8 @@
   - bugs (story_id, severity, open_count, total_count)
   - sonar (story_id, severity, open_count, total_count)
   - code (story_id, lines_added, lines_deleted)
+
+
+halfrunt-web (app running in the browser)
+halfrunt-rest (rest service to serve halfrunt data)
+halfrunt-service (produces halfrunt data)

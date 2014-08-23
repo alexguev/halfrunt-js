@@ -76,8 +76,13 @@ var StoryBoard = React.createClass({
               <Story key={story.jiraId} jiraId={story.jiraId} title={story.title} size={story.size} bugs={story.bugs} sonar={story.sonar} code={story.code}/>
             );
           })}
+          <div className="new-story" onClick={this.onNewStory}>+</div>
         </div>
     );
+  },
+
+  onNewStory: function() {
+    this.props.onNewStory();
   }
 });
 
