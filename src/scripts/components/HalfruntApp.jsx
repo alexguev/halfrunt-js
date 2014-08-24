@@ -6,11 +6,8 @@
 
 var React = require('react');
 
-require('../../styles/main.css');
 require("bootstrap/less/bootstrap.less");
-
-// CSS
-//require('../../styles/reset.css');
+require('../../styles/main.less');
 
 var qajax = require('qajax');
 

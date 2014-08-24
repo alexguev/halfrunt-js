@@ -13,14 +13,22 @@ html, body {
   color: #fff;
 }
 
+.box {
+  position: relative;
+  display: inline-block;
+}
+
 .story-board {
 }
 
-.story {
-  position: relative;
-  display: inline-block;
+.story-board-box {
+  &:extend(.box);
   width: 270px;
   margin: 20px;
+}
+
+.story {
+  &:extend(.story-board-box);
   border: solid #6AC5AC 1px;
 }
 
@@ -35,38 +43,31 @@ html, body {
 }
 
 .story-body {
-  height: 4em;
 }
 
 .bugs {
-  position: relative;
-  display: inline-block;
+  &:extend(.box);
   border-right: solid #6AC5AC 1px;
   width: 33%;
   height: 100%;
 }
 
 .sonar {
-  position: relative;
-  display: inline-block;
+  &:extend(.box);
   border-right: solid #6AC5AC 1px;
   width: 33%;
   height: 100%;
 }
 
 .code {
-  position: relative;
-  display: inline-block;
+  &:extend(.box);
   width: 33%;
   height: 100%;
 }
 
 .new-story {
-  position: relative;
-  display: inline-block;
-  width: 270px;
-  margin: 20px;
+  &:extend(.story-board-box);
   text-align: center;
   vertical-align: top;
-  font-size: 40px;
+  font-size: 70px;
 }

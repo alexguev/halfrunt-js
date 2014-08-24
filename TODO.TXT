@@ -1,5 +1,5 @@
 -X complete story data display
-- integrate less
+-X integrate less
 - filtering
 
 - serve data from clojure project
