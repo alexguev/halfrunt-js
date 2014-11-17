@@ -2,6 +2,8 @@
 -X integrate less
 - filtering
 
+- replace qajax with when-3.4.6 (needed by react-router)
+
 - serve data from clojure project
 - use socket.io to push changes to browser :)
   -X or just pull new data every 5 seconds (for now, this won't scale)
