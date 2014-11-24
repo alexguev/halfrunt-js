@@ -39,4 +39,4 @@ var HalfruntAppRoutes = (
 
 React.renderComponent(HalfruntAppRoutes, document.getElementById('content')); // jshint ignore:line
 
-module.exports = HalfruntAppRoutes;
+//module.exports = HalfruntAppRoutes;

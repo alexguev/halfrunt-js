@@ -1,6 +1,7 @@
 -X complete story data display
 -X integrate less
 - filtering
+- look into upgrading all deps
 
 - replace qajax with when-3.4.6 (needed by react-router)
 

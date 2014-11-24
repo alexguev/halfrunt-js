@@ -49,7 +49,7 @@ var Code = React.createClass({
       <div className="code">
         <div>Size: {this.props.storySize}</div>
       <div>Lines: {this.props.linesAdded}/{this.props.linesDeleted}</div>
-        <div>Ratio: 0.384</div>
+        <div>Ratio: 0.3</div>
       </div>
     );
   }
