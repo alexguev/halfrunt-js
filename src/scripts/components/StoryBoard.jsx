@@ -7,12 +7,6 @@
 var _ = require("underscore/underscore.js");
 
 var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var Routes = Router.Routes;
-var NotFoundRoute = Router.NotFoundRoute;
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
 
 var qajax = require('qajax');
 
@@ -47,9 +41,9 @@ var Code = React.createClass({
   render: function() {
     return (
       <div className="code">
-        <div>Size: {this.props.storySize}</div>
+      <div>Size: {this.props.storySize}</div>
       <div>Lines: {this.props.linesAdded}/{this.props.linesDeleted}</div>
-        <div>Ratio: 0.3</div>
+      <div>Ratio: 0.1</div>
       </div>
     );
   }
@@ -59,15 +53,9 @@ var Code = React.createClass({
 var Story = React.createClass({
 
   render: function() {
-    var storyId = this.props.activeJiraId === this.props.jiraId ?
-        <div>{this.props.jiraId}</div> :
-        <Link to="story" params={this.props}>{this.props.jiraId}</Link>;
-
     return (
       <div className="story">
-        <div className="story-id">
-          {storyId}
-        </div>
+        <div className="story-id">{this.props.jiraId}</div>
         <div className="story-title">{this.props.title}</div>
         <div className="story-body">
           <Bugs p1={this.props.bugs.p1} p2={this.props.bugs.p2} p3={this.props.bugs.p3}/>
@@ -86,14 +74,22 @@ var StoryBoard = React.createClass({
     return {stories: []};
   },
 
-  componentDidMount: function() {
+  render: function() {
     var that = this;
+    return (
+        <div>
+          {_.map(this.state.stories, function (story) {
+            return (
+              <Story key={story.jiraId} jiraId={story.jiraId} title={story.title} size={story.size} bugs={story.bugs} sonar={story.sonar} code={story.code}/>
+            );
+          })}
+          <div className="new-story" onClick={this.onNewStory}>+</div>
+        </div>
+    );
+  },
 
-    qajax('/data/stories.json').then(qajax.toJSON).then(function(response) {
-      if (that.isMounted()) {
-        that.setState({stories: response});
-      }
-    });
+  onNewStory: function() {
+    this.addNewStory();
   },
 
   addNewStory: function () {
@@ -113,24 +109,17 @@ var StoryBoard = React.createClass({
     this.setState({stories: stories});
   },
 
-
-  render: function() {
+  componentDidMount: function() {
     var that = this;
-    return (
-        <div>
-          {_.map(this.state.stories, function (story) {
-            return (
-              <Story key={story.jiraId} activeJiraId={that.props.params.jiraId}  jiraId={story.jiraId} title={story.title} size={story.size} bugs={story.bugs} sonar={story.sonar} code={story.code}/>
-            );
-          })}
-          <div className="new-story" onClick={this.onNewStory}>+</div>
-        </div>
-    );
+
+    qajax('/data/stories.json').then(qajax.toJSON).then(function(response) {
+      if (that.isMounted()) {
+        that.setState({stories: response});
+      }
+    });
   },
 
-  onNewStory: function() {
-    this.addNewStory();
-  }
+
 });
 
 module.exports = StoryBoard;
